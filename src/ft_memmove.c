@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 22:36:04 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/10/31 11:57:48 by bbonnet          ###   ########.fr       */
+/*   Created: 2023/10/31 11:40:46 by bbonnet           #+#    #+#             */
+/*   Updated: 2023/10/31 13:38:43 by bbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 
-void *ft_memset(void *str, int c, size_t n)
+void *ft_memmove ( void * destination, const void * source, size_t num )
 {
-	unsigned char *str_cp;
+      while(num)
+    {
 
-	str_cp = (unsigned char *) str;
-	while (n)
-	{
-		str_cp[n - 1] = (unsigned char)c;
-		n--;
-	}
-	return (str);
+    }
 }
