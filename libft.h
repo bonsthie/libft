@@ -8,7 +8,7 @@ int   ft_isalpha(int c);
 int   ft_isdigit(int num);
 int   ft_isalnum(int i);
 int   ft_isascii(int i);
-int ft_isprint(int i);
+int   ft_isprint(int i);
 int   ft_strlen(const char *str);
 int   ft_toupper(int c);
 int   ft_tolower(int c);
@@ -18,6 +18,7 @@ int   ft_strncmp(const char *first, const char *second, size_t length);
 void *ft_memset(void *str, int c, size_t n);
 void *ft_memchr(const void *str, int c, size_t n);
 void  ft_bzero(void *s, size_t n);
-int memcmp(const void *ptr1, const void *ptr2, size_t num);
+int   ft_memcmp(const void *ptr1, const void *ptr2, size_t num);
+size_t ft_strlcpy(char *dest, const char *src, unsigned int size);
 
 #endif
