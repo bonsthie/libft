@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:48:46 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/02 13:12:44 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:07:14 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int word_len(const char *str, const char sep)
+int word_counts(const char *str, const char sep)
 {
 	int word;
 	int i;
@@ -55,17 +55,17 @@ static size_t strldup(char *dest, const char *s, size_t size)
 char **ft_split(char const *s, char c)
 {
 	char **result;
-	size_t word;
+	size_t word_count;
 	size_t i;
 	size_t j;
 
-	word = word_len(s, c);
-	**result = malloc((word + 1) * sizeof(char *));
+    word_count = word_counts(s, c);
+    *result = malloc((word_count + 1) * sizeof(char *));
 	if (!result)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (i < word)
+	while (i < word_count)
 	{
 		while (s[j] != c)
 			j++;
