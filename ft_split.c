@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:48:46 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/02 14:07:14 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:13:06 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char **ft_split(char const *s, char c)
 	size_t j;
 
     word_count = word_counts(s, c);
-    *result = malloc((word_count + 1) * sizeof(char *));
+    result = malloc((word_count + 1) * sizeof(char *));
 	if (!result)
 		return (NULL);
 	i = 0;
