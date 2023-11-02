@@ -12,9 +12,9 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-so: $(OBJ)
-	$(CC) -nostartfiles -fPIC -shared $(CFLAGS) -o libft.so $(OBJ)
-
+so: 
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
 bonus:
 	echo "no bonuses"
 clean:

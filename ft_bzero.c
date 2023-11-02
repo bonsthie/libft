@@ -6,7 +6,7 @@
 /*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 23:04:22 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/10/30 23:20:09 by bbonnet          ###   ########.fr       */
+/*   Updated: 2023/11/01 14:48:11 by bbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void ft_bzero(void *s, size_t n)
 {
-    char *str = (char*)s;
-    while(n)
-    {
-        str[n - 1] = '\0';
-        n--;
-    }
+	char *str = (char *) s;
+	while (n)
+	{
+		str[n - 1] = '\0';
+		n--;
+	}
 }

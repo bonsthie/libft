@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 17:18:52 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/11/01 18:23:30 by babonnet         ###   ########.fr       */
+/*   Created: 2023/11/01 12:09:17 by bbonnet           #+#    #+#             */
+/*   Updated: 2023/11/01 18:50:46 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
-size_t ft_strlcat(char *dest, const char *src, unsigned int size)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t dest_len;
-	size_t src_len;
-	size_t i;
+    size_t s_len;
+    char    *dest;
 
-    i = 0;
-	dest_len = ft_strlen(dest);
-	src_len = ft_strlen(src);
-	if (dest_len >= size)
-		return (src_len + size);
-	while (src[i] && dest_len + i < size - 1)
-	{
-		dest[dest_len + i] = src[i];
-		i++;
-	}
-	dest[dest_len + i] = 0;
-	return (dest_len + src_len);
+    if (!s)
+        return (NULL);
+    s_len = ft_strlen(s);
+    if (start >= s_len)
+        return (ft_strdup(""));
+    if (len > s_len - start)
+        len = s_len - start;
+    dest = malloc((len + 1) * sizeof(char));
+    if (!dest)
+        return (NULL);
+    ft_strlcpy(dest, &s[start], len + 1);
+    return (dest);
 }
