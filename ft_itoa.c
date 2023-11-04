@@ -1,38 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 18:58:44 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/03 19:30:09 by babonnet         ###   ########.fr       */
+/*   Created: 2023/11/02 14:51:12 by babonnet          #+#    #+#             */
+/*   Updated: 2023/11/03 20:16:35 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-char *ft_strtrim(char const *s1, char const *set)
+static int calcul_length(int nb)
 {
-	size_t start;
-	size_t end;
-	char  *dest;
+	int count;
 
-	start = 0;
-	end = ft_strlen(s1);
-	if (!end)
-		--end;
-	while (ft_strchr(set, s1[end]))
-		--end;
-	while (ft_strchr(set, s1[start])&& s1[start])
-		start++;
-	if (start > end)
-		return (ft_strdup(""));
-	dest = malloc((end - start + 2) * sizeof(char));
+	count = 0;
+	if (nb == 0)
+		return (1);
+	if (nb < 0)
+		count++;
+	while (nb)
+	{
+		count++;
+		nb /= 10;
+	}
+	return (count);
+}
+
+char *ft_itoa(int nb)
+{
+	char *dest;
+	int   dest_len;
+	long  n;
+
+	n = nb;
+	dest_len = calcul_length(n);
+	dest = malloc((dest_len + 1) * sizeof(char));
 	if (!dest)
 		return (NULL);
-	ft_strlcpy(dest, &s1[start], end - start + 2);
+	dest[dest_len--] = 0;
+	if (n == 0)
+		dest[0] = '0';
+	if (n < 0)
+	{
+		dest[0] = '-';
+		n = -n;
+	}
+	while (n)
+	{
+		dest[dest_len--] = n % 10 + '0';
+		n /= 10;
+	}
 	return (dest);
 }

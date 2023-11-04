@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:48:46 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/02 14:13:06 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:35:25 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,45 +43,26 @@ static int strlen_split(const char *str, char sep)
 	return (i);
 }
 
-static size_t strldup(char *dest, const char *s, size_t size)
-{
-	dest = malloc((size + 1) * sizeof(char));
-	if (!dest)
-		return (-1);
-	ft_strlcpy(dest, s, size + 1);
-	return size;
-}
-
 char **ft_split(char const *s, char c)
 {
-	char **result;
-	size_t word_count;
-	size_t i;
-	size_t j;
+	char	**result;
+	int		i;
+	int		j;
+	int		k;
 
-    word_count = word_counts(s, c);
-    result = malloc((word_count + 1) * sizeof(char *));
-	if (!result)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (i < word_count)
+	i = -1;
+	k = 0;
+	result = malloc((word_counts(s, c) + 1) * sizeof(char *));
+	while (++i < word_counts(s, c))
 	{
-		while (s[j] != c)
-			j++;
-		j += strldup(result[i], &s[j], strlen_split(&s[j], c));
-		i++;
+		j = 0;
+		while (s[k] && s[k] == c)
+			k++;
+		result[i] = malloc((strlen_split(&s[k], c) + 1) * sizeof(char));
+		while (s[k] && s[k] != c)
+			result[i][j++] = s[k++];
+		result[i][j] = 0;
 	}
-	result[i][j] = 0;
+	result[i] = 0;
 	return (result);
-}
-
-int main()
-{
-	char   test[] = "commet ca va la team   ";
-	char   sep = ' ';
-	char **result = ft_split(test, sep);
-	for (int i = 0; i < 5; i++)
-		printf("%s\n", result[i]);
-	return 1;
 }

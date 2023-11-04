@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 20:06:28 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/11/03 20:09:49 by babonnet         ###   ########.fr       */
+/*   Created: 2023/11/03 12:19:01 by babonnet          #+#    #+#             */
+/*   Updated: 2023/11/03 14:39:53 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
-char *ft_strchr(const char *str, int c)
+t_list *ft_lstnew(void *content)
 {
-	while (*str)
-	{
-		if (c == *str)
-			return ((char *) str);
-		str++;
-	}
-	if (c == '\0')
-		return ((char *) str);
-	return (NULL);
+	t_list *new;
+
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+    return (new);
 }

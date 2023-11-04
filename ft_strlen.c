@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
+/*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:33:17 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/10/30 19:35:16 by bbonnet          ###   ########.fr       */
+/*   Updated: 2023/11/03 19:53:55 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int ft_strlen(const char *str)
 {
-	size_t i;
+	const char *start;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+    start = str;
+    while(*start)
+        ++start;
+    return (start - str);
 }

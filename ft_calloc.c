@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
+/*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 23:03:07 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/10/31 23:17:04 by bbonnet          ###   ########.fr       */
+/*   Updated: 2023/11/03 19:36:04 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void *ft_calloc(size_t nitems, size_t size)
 {
     void *dest;
 
+    if (nitems * size / size != nitems)
+        return (NULL);
     dest = malloc(nitems * size);
     if (!dest)
         return (NULL);

@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 20:06:28 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/11/03 20:09:49 by babonnet         ###   ########.fr       */
+/*   Created: 2023/11/03 18:14:54 by babonnet          #+#    #+#             */
+/*   Updated: 2023/11/03 19:21:17 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
-char *ft_strchr(const char *str, int c)
+void ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	while (*str)
-	{
-		if (c == *str)
-			return ((char *) str);
-		str++;
-	}
-	if (c == '\0')
-		return ((char *) str);
-	return (NULL);
+    t_list *node;
+    t_list *node_next;
+
+    if (!lst || !del)
+        return ;
+    node = *lst;
+    while (node)
+    {
+        node_next = node->next;
+        ft_lstdelone(node, void (*del)(void *));
+        node = node_next;
+    }
 }
