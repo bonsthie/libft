@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 14:01:25 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/11/04 17:26:06 by babonnet         ###   ########.fr       */
+/*   Created: 2023/11/04 15:53:41 by babonnet          #+#    #+#             */
+/*   Updated: 2023/11/04 16:03:32 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
-char *ft_strjoin(char const *s1, char const *s2)
-{
-	size_t length_s1;
-	size_t length_s2;
-	char  *dest;
+#include "libft_bonus.h"
 
-	length_s1 = ft_strlen(s1);
-	length_s2 = ft_strlen(s2);
-	dest = malloc((length_s1 + length_s2 + 1) * sizeof(char));
-	if (!dest)
-		return (NULL);
-	ft_strlcpy(dest, s1, length_s1 + 1);
-	ft_strlcat(dest, s2, length_s1 + length_s2 + 1);
-	return (dest);
+void ft_lstiter(t_list *lst, void (*f)(void *))
+{
+    while(lst)
+    {
+        f(lst->content);
+        lst = lst->next;
+    }
 }

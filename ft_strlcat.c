@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:18:52 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/11/01 18:23:30 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/04 17:46:05 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ size_t ft_strlcat(char *dest, const char *src, unsigned int size)
 	size_t src_len;
 	size_t i;
 
+	if (!size)
+		return (0);
     i = 0;
 	dest_len = ft_strlen(dest);
 	src_len = ft_strlen(src);

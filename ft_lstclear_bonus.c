@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:14:54 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/03 19:21:17 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/04 15:53:16 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void ft_lstclear(t_list **lst, void (*del)(void *))
     while (node)
     {
         node_next = node->next;
-        ft_lstdelone(node, void (*del)(void *));
+        ft_lstdelone(node, del);
         node = node_next;
     }
+    *lst = NULL;
 }
