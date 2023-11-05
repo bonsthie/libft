@@ -6,7 +6,7 @@
 /*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 21:32:40 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/10/31 20:42:05 by bbonnet          ###   ########.fr       */
+/*   Updated: 2023/11/05 00:48:55 by bbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 
 char *ft_strrchr(const char *str, int c)
 {
+    unsigned char uc;
 	char  *last;
 	size_t i;
 
 	i = 0;
+    uc = (unsigned char)c;
 	last = NULL;
-	if (c == '\0')
+	if (uc == '\0')
 		return ((char *) &str[ft_strlen(str)]);
 
 	while (str[i])
 	{
-		if (str[i] == c)
+		if (str[i] == uc)
 			last = (char *) &str[i];
 		i++;
 	}

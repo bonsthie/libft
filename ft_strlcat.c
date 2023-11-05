@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
+/*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:18:52 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/11/04 17:46:05 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/05 00:54:38 by bbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t ft_strlcat(char *dest, const char *src, unsigned int size)
 	size_t i;
 
 	if (!size)
-		return (0);
+		return (ft_strlen(src));
     i = 0;
 	dest_len = ft_strlen(dest);
 	src_len = ft_strlen(src);
