@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
+/*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:40:46 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/11/03 20:04:04 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/05 19:24:05 by bbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,19 @@ void *ft_memmove(void *destination, const void *source, size_t num)
 
 	src = (unsigned char *) source;
 	dest = (unsigned char *) destination;
-	if (src == NULL && dest == NULL)
+	if (src == dest)
 		return (destination);
-	while (num)
+	if (src > dest)
+    {
+		while (num--)
+			*dest++ = *src++;
+    }
+	else
 	{
-        num--;
-		dest[num] = src[num];
+		src += num;
+		dest += num;
+		while (num--)
+			*(--dest) = *(--src);
 	}
-	return ((void *) dest);
+    return (destination);
 }

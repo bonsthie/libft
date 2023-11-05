@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
+/*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 22:36:04 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/11/05 19:55:37 by bbonnet          ###   ########.fr       */
+/*   Created: 2023/11/03 15:32:25 by babonnet          #+#    #+#             */
+/*   Updated: 2023/11/03 17:16:04 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft_bonus.h"
 
-void *ft_memset(void *str, int c, size_t n)
+int ft_lstsize(t_list *lst)
 {
-	unsigned char *str_cp;
+	int i;
 
-	str_cp = (unsigned char *) str;
-	while (n--)
-		str_cp[n] = (unsigned char)c;
-	return (str);
+	i = 0;
+	while (lst)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return (i);
 }

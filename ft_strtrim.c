@@ -6,7 +6,7 @@
 /*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 18:58:44 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/05 02:09:54 by bbonnet          ###   ########.fr       */
+/*   Updated: 2023/11/05 19:48:53 by bbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ char *ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	start = 0;
 	end = ft_strlen(s1);
-	if (!end)
+	if (end == 0)
+		return (ft_strdup(""));
+	while (end > 0 && ft_strchr(set, s1[end - 1]))
 		--end;
-	while (ft_strchr(set, s1[end]))
-		--end;
-	while (ft_strchr(set, s1[start])&& s1[start])
+	while (start < end && ft_strchr(set, s1[start])&& s1[start])
 		start++;
 	if (start > end)
 		return (ft_strdup(""));
-	dest = malloc((end - start + 2) * sizeof(char));
+	dest = malloc((end - start + 1) * sizeof(char));
 	if (!dest)
 		return (NULL);
-	ft_strlcpy(dest, &s1[start], end - start + 2);
+	ft_strlcpy(dest, &s1[start], end - start + 1);
 	return (dest);
 }

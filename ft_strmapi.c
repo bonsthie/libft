@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
+/*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:37:30 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/02 15:49:29 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/05 19:52:02 by bbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char        *dest;
 	unsigned int i;
 
+	if (!s)
+		return (NULL);
 	i = ft_strlen(s);
 	dest = malloc((i + 1) * sizeof(char));
 	if (!dest)
@@ -23,5 +25,5 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	dest[i] = 0;
 	while (i--)
 		dest[i] = f(i, s[i]);
-    return (dest);
+	return (dest);
 }

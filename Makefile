@@ -38,8 +38,8 @@ SRC = ft_atoi.c \
 
 SRC_BONUS = ft_lstnew_bonus.c \
 			ft_lstadd_front.c  \
-			ft_lstsize.c \
-			ft_lstlast.c \
+			ft_lstsize_bonus.c \
+			ft_lstlast_bonus.c \
 			ft_lstadd_back_bonus.c \
 			ft_lstdelone_bonus.c \
 			ft_lstclear_bonus.c \
@@ -65,7 +65,7 @@ bonus: $(OBJ_BONUS) $(OBJ)
 	ar rc $(NAME) $^	
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
