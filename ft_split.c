@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:48:46 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/06 13:19:17 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/06 14:41:30 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,37 +49,43 @@ void	free_all(char **strs, int word_count)
 	free(strs);
 }
 
-char	**ft_split(char const *s, char c)
+void	create_token(char **token, const char *s, int word_count, const char c)
 {
-	char	**result;
-	int		word_count;
-	int		i;
-	int		j;
-	int		k;
+	int	i;
+	int	j;
+	int	k;
 
-	if (!s)
-		return (NULL);
 	i = -1;
-	k = 0;
-	word_count = word_counts(s, c);
-	result = malloc((word_count + 1) * sizeof(char *));
-	if (!result)
-		return (NULL);
+	j = 0;
 	while (++i < word_count)
 	{
 		j = 0;
 		while (s[k] && s[k] == c)
 			k++;
-		result[i] = malloc((strlen_split(&s[k], c) + 1) * sizeof(char));
-		if (!result[i])
+		token[i] = malloc((strlen_split(&s[k], c) + 1) * sizeof(char));
+		if (!token[i])
 		{
-			free_all(result, word_count);
-			return (NULL);
+			free_all(token, word_count);
+			return ;
 		}
 		while (s[k] && s[k] != c)
-			result[i][j++] = s[k++];
-		result[i][j] = 0;
+			token[i][j++] = s[k++];
+		token[i][j] = 0;
 	}
-	result[i] = NULL;
+	token[i] = NULL;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**result;
+	int		word_count;
+
+	if (!s)
+		return (NULL);
+	word_count = word_counts(s, c);
+	result = malloc((word_count + 1) * sizeof(char *));
+	if (!result)
+		return (NULL);
+	create_token(result, s, word_count, c);
 	return (result);
 }

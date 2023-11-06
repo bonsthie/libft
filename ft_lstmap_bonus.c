@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 16:03:57 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/06 13:04:47 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:20:19 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*head;
 	t_list	*new;
 
+	if (lst == NULL || f == NULL || del == NULL)
+		return (NULL);
 	head = NULL;
 	while (lst)
 	{
@@ -26,7 +28,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			ft_lstclear(&head, del);
 			return (NULL);
 		}
-		ft_lstadd_front(&head, new);
+		ft_lstadd_back(&head, new);
 		lst = lst->next;
 	}
 	return (head);
