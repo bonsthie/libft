@@ -6,20 +6,13 @@
 /*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:48:46 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/05 01:58:49 by bbonnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 03:27:48 by bbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
-
-void free_all(char **tab, int index)
-{
-    while (index--)
-        free(tab[index]);
-    free(tab);
-}
 
 int word_counts(const char *str, const char sep)
 {
@@ -50,45 +43,44 @@ static int strlen_split(const char *str, char sep)
 	return (i);
 }
 
-static char *word_dupe(const char *s, char c, int *len)
+void free_all(char **strs, int word_count)
 {
-	char *new;
-	int new_len;
-	int i;
-
-    i = 0;
-	while (s[i] && s[i] == c)
-		i++;
-	new_len = strlen_split(s + i, c) + 1;
-	new = malloc(new_len * sizeof(char));
-	if (!new)
-        return (NULL);
-    ft_strlcpy(new + i, s, new_len);
-	*len += new_len;
-	return (new);
+	while (word_count)
+		free(strs[word_count--]);
+	free(strs);
 }
 
 char **ft_split(char const *s, char c)
 {
 	char **result;
 	int    word_count;
-	int    *len;
 	int    i;
+	int    j;
+	int    k;
 
 	if (!s)
 		return (NULL);
 	i = -1;
-	len = 0;
+	k = 0;
 	word_count = word_counts(s, c);
-    result = ft_calloc(word_count + 1, sizeof(char *));
+	result = malloc((word_count + 1) * sizeof(char *));
+	if (!result)
+		return (NULL);
 	while (++i < word_count)
 	{
-		result[i] = word_dupe(&s[i], c, len);
-        if (!result[i])
-        {
-            free_all(result, word_count);
-            return (NULL);
-        }
+		j = 0;
+		while (s[k] && s[k] == c)
+			k++;
+		result[i] = malloc((strlen_split(&s[k], c) + 1) * sizeof(char));
+		if (!result[i])
+		{
+			free_all(result, word_count);
+			return (NULL);
+		}
+		while (s[k] && s[k] != c)
+			result[i][j++] = s[k++];
+		result[i][j] = 0;
 	}
+	result[i] = NULL;
 	return (result);
 }
