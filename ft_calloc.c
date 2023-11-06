@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 23:03:07 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/11/06 12:57:37 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:10:39 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t nitems, size_t size)
 {
 	void	*dest;
 
-	if (nitems * size / size != nitems)
+	if (size && nitems * size / size != nitems)
 		return (NULL);
 	dest = malloc(nitems * size);
 	if (!dest)

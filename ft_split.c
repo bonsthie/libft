@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:48:46 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/06 14:41:30 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:13:09 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	create_token(char **token, const char *s, int word_count, const char c)
 
 	i = -1;
 	j = 0;
+	k = 0;
 	while (++i < word_count)
 	{
 		j = 0;
