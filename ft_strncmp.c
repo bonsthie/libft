@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
+/*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 21:57:26 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/10/31 21:00:06 by bbonnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 13:14:31 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int ft_strncmp(const char *first, const char *second, size_t length)
+int	ft_strncmp(const char *first, const char *second, size_t length)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (length == 0)

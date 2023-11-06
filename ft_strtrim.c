@@ -3,24 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
+/*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 18:58:44 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/05 19:48:53 by bbonnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 12:53:05 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 #include <stdlib.h>
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t start;
-	size_t end;
-	char  *dest;
+	size_t		start;
+	size_t		end;
+	char		*dest;
 
-    if (!s1 || !set)
+	if (!s1 || !set)
 		return (NULL);
 	start = 0;
 	end = ft_strlen(s1);
@@ -28,7 +27,7 @@ char *ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(""));
 	while (end > 0 && ft_strchr(set, s1[end - 1]))
 		--end;
-	while (start < end && ft_strchr(set, s1[start])&& s1[start])
+	while (start < end && ft_strchr(set, s1[start]) && s1[start])
 		start++;
 	if (start > end)
 		return (ft_strdup(""));

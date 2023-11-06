@@ -6,11 +6,11 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 20:00:58 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/11/03 19:59:23 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:16:21 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    return (c + (c >= 'A' && c <= 'Z') * 32);
+	return (c + (c >= 'A' && c <= 'Z') * 32);
 }

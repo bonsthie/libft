@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
+/*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 18:53:29 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/10/30 22:18:19 by bbonnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 12:58:05 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int i)
+int	ft_isascii(int i)
 {
-    return (i >= 0 && i <= 127);
+	return (i >= 0 && i <= 127);
 }
-

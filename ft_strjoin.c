@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
+/*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 14:01:25 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/11/05 19:50:45 by bbonnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 13:11:25 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-char *ft_strjoin(char const *s1, char const *s2)
+
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t length_s1;
-	size_t length_s2;
-	char  *dest;
+	size_t	length_s1;
+	size_t	length_s2;
+	char	*dest;
 
 	if (!s1)
 		return (NULL);

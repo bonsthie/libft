@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
+/*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:15:19 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/10/31 11:16:40 by bbonnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 12:58:21 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int ft_isprint(int i)
+int	ft_isprint(int i)
 {
-    return (i >= 32 && i <= 126);
+	return (i >= 32 && i <= 126);
 }

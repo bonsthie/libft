@@ -6,16 +6,15 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:51:12 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/03 20:16:35 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:00:14 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 
-static int calcul_length(int nb)
+static int	calcul_length(int nb)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (nb == 0)
@@ -30,11 +29,11 @@ static int calcul_length(int nb)
 	return (count);
 }
 
-char *ft_itoa(int nb)
+char	*ft_itoa(int nb)
 {
-	char *dest;
-	int   dest_len;
-	long  n;
+	char	*dest;
+	int		dest_len;
+	long	n;
 
 	n = nb;
 	dest_len = calcul_length(n);

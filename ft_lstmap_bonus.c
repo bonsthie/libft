@@ -3,30 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
+/*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 16:03:57 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/05 20:09:56 by bbonnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 13:04:47 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_bonus.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *head;
-    t_list *new;
+	t_list	*head;
+	t_list	*new;
 
 	head = NULL;
 	while (lst)
 	{
-        new = ft_lstnew(f(lst->content));
+		new = ft_lstnew(f(lst->content));
 		if (!new)
 		{
 			ft_lstclear(&head, del);
 			return (NULL);
 		}
-        ft_lstadd_front(&head, new);
+		ft_lstadd_front(&head, new);
 		lst = lst->next;
 	}
 	return (head);

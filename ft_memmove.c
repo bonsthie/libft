@@ -3,29 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
+/*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:40:46 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/11/05 19:24:05 by bbonnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 13:06:58 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void *ft_memmove(void *destination, const void *source, size_t num)
+void	*ft_memmove(void *destination, const void *source, size_t num)
 {
-	unsigned char *src;
-	unsigned char *dest;
+	unsigned char	*src;
+	unsigned char	*dest;
 
 	src = (unsigned char *) source;
 	dest = (unsigned char *) destination;
 	if (src == dest)
 		return (destination);
 	if (src > dest)
-    {
+	{
 		while (num--)
 			*dest++ = *src++;
-    }
+	}
 	else
 	{
 		src += num;
@@ -33,5 +33,5 @@ void *ft_memmove(void *destination, const void *source, size_t num)
 		while (num--)
 			*(--dest) = *(--src);
 	}
-    return (destination);
+	return (destination);
 }

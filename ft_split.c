@@ -3,21 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
+/*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:48:46 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/06 03:27:48 by bbonnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 13:19:17 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 #include <stdlib.h>
 
-int word_counts(const char *str, const char sep)
+int	word_counts(const char *str, const char sep)
 {
-	int word;
-	int i;
+	int	word;
+	int	i;
 
 	i = 0;
 	word = 0;
@@ -33,9 +32,9 @@ int word_counts(const char *str, const char sep)
 	return (word);
 }
 
-static int strlen_split(const char *str, char sep)
+static int	strlen_split(const char *str, char sep)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] && str[i] != sep)
@@ -43,20 +42,20 @@ static int strlen_split(const char *str, char sep)
 	return (i);
 }
 
-void free_all(char **strs, int word_count)
+void	free_all(char **strs, int word_count)
 {
 	while (word_count)
 		free(strs[word_count--]);
 	free(strs);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **result;
-	int    word_count;
-	int    i;
-	int    j;
-	int    k;
+	char	**result;
+	int		word_count;
+	int		i;
+	int		j;
+	int		k;
 
 	if (!s)
 		return (NULL);

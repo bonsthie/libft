@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
+/*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 18:53:35 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/10/30 18:53:38 by bbonnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 12:50:29 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int num)
+int	ft_isdigit(int num)
 {
 	return (num >= '0' && num <= '9');
 }

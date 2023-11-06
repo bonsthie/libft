@@ -6,21 +6,21 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 23:03:07 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/11/03 19:36:04 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:57:37 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_calloc(size_t nitems, size_t size)
+void	*ft_calloc(size_t nitems, size_t size)
 {
-    void *dest;
+	void	*dest;
 
-    if (nitems * size / size != nitems)
-        return (NULL);
-    dest = malloc(nitems * size);
-    if (!dest)
-        return (NULL);
-    ft_bzero(dest, nitems * size);
-    return (dest);
+	if (nitems * size / size != nitems)
+		return (NULL);
+	dest = malloc(nitems * size);
+	if (!dest)
+		return (NULL);
+	ft_bzero(dest, nitems * size);
+	return (dest);
 }

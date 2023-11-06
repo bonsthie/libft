@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbonnet <bbonnet@42angouleme.fr>           +#+  +:+       +#+        */
+/*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 23:25:03 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/10/31 10:41:27 by bbonnet          ###   ########.fr       */
+/*   Updated: 2023/11/06 12:51:47 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void *ft_memchr(const void *str, int c, size_t n)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
-	size_t               i;
-	const unsigned char *str_cp;
+	size_t					i;
+	const unsigned char		*str_cp;
 
 	i = 0;
 	str_cp = (const unsigned char *) str;
