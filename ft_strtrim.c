@@ -6,12 +6,11 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 18:58:44 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/06 12:53:05 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/08 16:29:48 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

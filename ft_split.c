@@ -6,12 +6,11 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:48:46 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/06 17:13:09 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/08 16:36:37 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 int	word_counts(const char *str, const char sep)
 {
@@ -42,7 +41,7 @@ static int	strlen_split(const char *str, char sep)
 	return (i);
 }
 
-void	free_all(char **strs, int word_count)
+static void	free_all(char **strs, int word_count)
 {
 	while (word_count)
 		free(strs[word_count--]);

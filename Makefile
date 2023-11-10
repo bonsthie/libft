@@ -37,7 +37,6 @@ SRC = ft_atoi.c \
 	ft_substr.c
 
 SRC_BONUS = ft_lstnew_bonus.c \
-			ft_lstadd_front_bonus.c  \
 			ft_lstsize_bonus.c \
 			ft_lstlast_bonus.c \
 			ft_lstadd_back_bonus.c \
@@ -58,10 +57,6 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-so: 
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(SRC_BONUS)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) $(OBJ_BONUS)
-
 bonus: $(OBJ_BONUS) $(OBJ)
 	ar rc $(NAME) $^	
 
@@ -73,4 +68,4 @@ fclean: clean
 
 re:	fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

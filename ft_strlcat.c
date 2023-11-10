@@ -6,12 +6,11 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:18:52 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/11/06 13:11:55 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/08 16:37:30 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 size_t	ft_strlcat(char *dest, const char *src, unsigned int size)
 {

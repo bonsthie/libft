@@ -6,12 +6,11 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 22:41:02 by bbonnet           #+#    #+#             */
-/*   Updated: 2023/11/06 13:10:52 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/08 16:35:18 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strdup(const char *source)
 {
