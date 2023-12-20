@@ -6,13 +6,13 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:48:46 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/08 16:36:37 by babonnet         ###   ########.fr       */
+/*   Updated: 2023/11/13 11:02:13 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	word_counts(const char *str, const char sep)
+static int	word_counts(const char *str, const char sep)
 {
 	int	word;
 	int	i;
@@ -48,7 +48,7 @@ static void	free_all(char **strs, int word_count)
 	free(strs);
 }
 
-void	create_token(char **token, const char *s, int word_count, const char c)
+static void	create_token(char **token, const char *s, int word_count, char c)
 {
 	int	i;
 	int	j;
