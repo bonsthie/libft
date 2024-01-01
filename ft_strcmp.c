@@ -6,14 +6,13 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 20:16:12 by babonnet          #+#    #+#             */
-/*   Updated: 2024/01/01 20:16:49 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/01/01 20:31:13 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stddef.h>
 
-int	ft_strncmp(const char *first, const char *second)
+int	ft_strcmp(const char *first, const char *second)
 {
 	size_t	i;
 
