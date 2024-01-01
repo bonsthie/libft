@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 12:16:35 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/09 19:00:20 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/01/01 20:17:15 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		ft_tolower(int c);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 int		ft_strncmp(const char *first, const char *second, size_t length);
+int	ft_strncmp(const char *first, const char *second);
 void	*ft_memset(void *str, int c, size_t n);
 void	*ft_memchr(const void *str, int c, size_t n);
 void	ft_bzero(void *s, size_t n);

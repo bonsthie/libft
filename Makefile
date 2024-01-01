@@ -22,6 +22,7 @@ SRC = ft_atoi.c \
 	ft_striteri.c \
 	ft_strlcpy.c \
 	ft_strncmp.c \
+	ft_strcmp.c \
 	ft_strtrim.c \
 	ft_toupper.c \
 	ft_calloc.c \
