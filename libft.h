@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 12:16:35 by babonnet          #+#    #+#             */
-/*   Updated: 2024/01/09 01:18:52 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:42:54 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_swap(int *a, int *b);
+char				*ft_strcpy(char *dest, char *src);
+char				*get_next_line(int fd);
 
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);
