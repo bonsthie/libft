@@ -35,7 +35,8 @@ SRC = ft_atoi.c \
 	ft_strjoin.c \
 	ft_strlen.c \
 	ft_strnstr.c \
-	ft_substr.c
+	ft_substr.c \
+	ft_swap.c
 
 SRC_BONUS = ft_lstnew_bonus.c \
 			ft_lstsize_bonus.c \
