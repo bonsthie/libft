@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 17:06:53 by bbonnet           #+#    #+#             */
-/*   Updated: 2024/01/10 05:49:58 by babonnet         ###   ########.fr       */
+/*   Created: 2024/01/10 05:43:01 by babonnet          #+#    #+#             */
+/*   Updated: 2024/01/10 05:48:35 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+long long	ft_atoll(const char *str)
 {
-	int	i;
-	int	nb;
-	int	sign;
+	int			i;
+	long long	nb;
+	int			sign;
 
 	i = 0;
 	nb = 0;
