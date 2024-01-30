@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 12:16:35 by babonnet          #+#    #+#             */
-/*   Updated: 2024/01/30 16:03:01 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/01/30 16:51:06 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+# ifndef INT_MIN
+#  define INT_MIN -2147483648
+# endif
+
+# ifndef INT_MAX
+#  define INT_MAX 2147483647
+# endif
 
 typedef struct s_list
 {
@@ -66,6 +74,7 @@ char				*ft_strcpy(char *dest, char *src);
 char				*get_next_line(int fd);
 long long			ft_atoll(const char *str);
 void				free_strs(char **strs);
+int					ft_isint(char *nb);
 
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);
