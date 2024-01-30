@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   free_strs.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 05:43:01 by babonnet          #+#    #+#             */
-/*   Updated: 2024/01/10 05:46:44 by babonnet         ###   ########.fr       */
+/*   Created: 2024/01/30 16:00:26 by babonnet          #+#    #+#             */
+/*   Updated: 2024/01/30 16:03:11 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 
-long long	ft_atoll(const char *str)
+void	free_strs(char **strs)
 {
-	int	i;
-	long long	nb;
-	int	sign;
+	char	**strs_cpy;
 
-	i = 0;
-	nb = 0;
-	sign = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	strs_cpy = strs;
+	if (!strs)
+		return ;
+	while (*strs)
 	{
-		if (str[i] == '-')
-			sign = -sign;
-		i++;
+		free(*strs);
+		strs++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = (nb * 10) + (str[i] - 48);
-		i++;
-	}
-	return (nb * sign);
+	free(strs_cpy);
 }
