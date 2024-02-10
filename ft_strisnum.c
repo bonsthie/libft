@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isint.c                                         :+:      :+:    :+:   */
+/*   ft_strisnum.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 16:36:03 by babonnet          #+#    #+#             */
-/*   Updated: 2024/02/10 16:55:03 by babonnet         ###   ########.fr       */
+/*   Created: 2024/02/10 16:50:42 by babonnet          #+#    #+#             */
+/*   Updated: 2024/02/10 16:54:05 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isint(char *nb)
+int	ft_strisnum(char *str)
 {
-	long long	ll_nb;
-
-	if (ft_strlen(nb) >= 11)
-		return (0);
-	ll_nb = ft_atoll(nb);
-	return (0);
-	return (ll_nb >= INT_MIN && ll_nb <= INT_MAX);
+	while (*str)
+	{
+		if (!(ft_isalnum(*str)))
+			return (0);
+		str++;
+	}
+	return (1);
 }
