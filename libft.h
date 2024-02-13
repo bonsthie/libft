@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 12:16:35 by babonnet          #+#    #+#             */
-/*   Updated: 2024/02/10 16:53:30 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/02/13 11:41:09 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ long long			ft_atoll(const char *str);
 void				free_strs(char **strs);
 int					ft_isint(char *nb);
 int					ft_strisnum(char *str);
+int					ft_isspace(int c);
+int					ft_atoi_base(char *nptr, int base);
 
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);
