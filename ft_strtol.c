@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 11:24:46 by babonnet          #+#    #+#             */
-/*   Updated: 2024/02/14 11:43:38 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/02/14 15:15:27 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ static inline int	ft_index(char *str, char c)
 	return (tmp - str);
 }
 
-long	ft_strtol(char *nptr, char *base, int base_size)
+long int	ft_strtol(char *nptr, char *base, int base_size)
 {
 	char		base_s[17] = "0123456789ABCDEF";
-	long		nb;
+	long int	nb;
 	int			i;
 	int			sign;
 
