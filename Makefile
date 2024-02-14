@@ -44,7 +44,8 @@ SRC = ft_atoi.c \
 	ft_isint.c \
 	ft_strisnum.c \
 	ft_isspace.c \
-	ft_atoi_base.c
+	ft_atoi_base.c \
+	ft_strtol.c \
 
 SRC_BONUS = ft_lstnew_bonus.c \
 			ft_lstsize_bonus.c \
