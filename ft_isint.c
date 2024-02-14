@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 16:36:03 by babonnet          #+#    #+#             */
-/*   Updated: 2024/02/13 20:28:05 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/02/14 11:16:05 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	ft_isint(char *nb)
 	long long	ll_nb;
 	char		*nb_2;
 
+	nb_2 = nb;
 	if (*nb_2 == '+' || *nb_2 == '-')
 		nb_2++;
 	if (*nb_2 == '+' || *nb_2 == '-')

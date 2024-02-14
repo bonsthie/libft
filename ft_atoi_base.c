@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:37:23 by babonnet          #+#    #+#             */
-/*   Updated: 2024/02/14 11:11:42 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/02/14 11:15:46 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static inline int	ft_index(char *str, char c)
 	char	*tmp;
 
 	tmp = str;
-	while (*tmp && *tmp != c)
+	while (*tmp && (ft_toupper(*tmp) != c))
 		tmp++;
 	if (!tmp)
 		return (0);
