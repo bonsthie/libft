@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:37:23 by babonnet          #+#    #+#             */
-/*   Updated: 2024/02/13 11:40:56 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/02/14 11:11:42 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static inline int	ft_index(char *str, char c)
 
 int	ft_atoi_base(char *nptr, int base)
 {
-	static char	base_s[17] = "0123456789abcdef";
+	static char	base_s[17] = "0123456789ABCDEF";
 	long		n;
 	int			i;
 	int			sign;
