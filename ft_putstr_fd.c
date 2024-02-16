@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:38:52 by babonnet          #+#    #+#             */
-/*   Updated: 2023/11/06 13:08:43 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/02/17 00:51:10 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,5 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
 		return ;
-	while (*s)
-		ft_putchar_fd(*s++, fd);
+	write(fd, s, ft_strlen(s));
 }

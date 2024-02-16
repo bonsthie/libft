@@ -6,11 +6,11 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:38:16 by babonnet          #+#    #+#             */
-/*   Updated: 2024/02/13 11:39:42 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/02/17 00:57:37 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isspace(int c)
+int	ft_isspace(int c)
 {
 	return (c == 32 || (c >= 9 && c <= 13));
 }
