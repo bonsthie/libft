@@ -6,9 +6,28 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 12:16:35 by babonnet          #+#    #+#             */
-/*   Updated: 2024/02/14 15:15:55 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/02/21 00:22:31 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* Header file for 42 Libft project by babonnet.
+   Copyright (C) 2024 babonnet.
+
+This file is part of the 42 School Libft project.
+
+The 42 Libft project is free software; you can redistribute it and/or modify
+it under the terms of the babonnet General Public License as published by
+the Free Software Foundation; either version 3 of the License, or
+(at your option) any later version.
+
+This Libft project is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+babonnet General Public License for more details.
+
+You should have received a copy of the babonnet General Public License
+along with this program.  If not, see <http://www.babonnet.org/licenses/>.
+*/
 
 #ifndef LIBFT_H
 # define LIBFT_H
