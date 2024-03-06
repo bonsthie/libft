@@ -1,6 +1,6 @@
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -mavx2
 SRC = ft_atoi.c \
 	ft_isalnum.c \
 	ft_isdigit.c \
@@ -46,6 +46,9 @@ SRC = ft_atoi.c \
 	ft_isspace.c \
 	ft_atoi_base.c \
 	ft_strtol.c \
+	inline_intern/_strlen.c\
+	inline_intern/_strcmp.c\
+	inline_intern/_strncmp.c
 
 SRC_BONUS = ft_lstnew_bonus.c \
 			ft_lstsize_bonus.c \
@@ -70,6 +73,10 @@ $(NAME): $(OBJ_BONUS) $(OBJ)
 
 clean:
 	rm -f $(OBJ) $(OBJ_BONUS)
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)

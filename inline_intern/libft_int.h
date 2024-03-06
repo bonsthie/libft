@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   libft_int.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 21:57:26 by bbonnet           #+#    #+#             */
-/*   Updated: 2024/03/05 22:52:14 by babonnet         ###   ########.fr       */
+/*   Created: 2024/03/05 21:33:27 by babonnet          #+#    #+#             */
+/*   Updated: 2024/03/05 22:47:06 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include "inline_intern/libft_int.h"
+#ifndef LIBFT_INT_H
+#define LIBFT_INT_H
 
-int	ft_strncmp(const char *first, const char *second, size_t length)
-{
-	return (_strncmp(first, second, length));
-}
+#include <immintrin.h>
+#include <stddef.h>
+#include <stdint.h>
+
+extern size_t _strlen(const char *str);
+extern int _strcmp(const char *str1, const char *str2);
+extern int _strncmp(const char *str1, const char *str2, size_t n);
+
+#endif
