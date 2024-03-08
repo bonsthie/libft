@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 17:28:42 by babonnet          #+#    #+#             */
-/*   Updated: 2024/03/07 17:29:26 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/03/08 17:32:17 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 typedef unsigned char __attribute__((__may_alias__)) t_ptr;
 typedef uint32_t __attribute__((__may_alias__)) u32;
 typedef uint64_t __attribute__((__may_alias__)) u64;
+
+//inline memset32(*dest, int value, size_t len)
+//{
+//    u32 c32;
+//
+//}
 
 inline void    _memeset(void *dest, int value, size_t len)
 {

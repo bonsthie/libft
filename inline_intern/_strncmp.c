@@ -6,12 +6,15 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 22:12:56 by babonnet          #+#    #+#             */
-/*   Updated: 2024/03/08 16:52:29 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/03/08 17:40:48 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include "libft_int.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 static inline int	frv(int mask, int mask_zeros, const char *str1, const char *str2, size_t n)
 {
@@ -38,9 +41,13 @@ inline int	_strncmp(const char *str1, const char *str2, size_t n)
 
 	if (n == 0)
 		return (0);
-	if (*str1 == 0 || *str2 == 0)
-		return (*(unsigned char *)str1 - *(unsigned char *)str2);
-	if (!*str1 || !*str2)
+	while (*str1 && n != 1 && (uintptr_t)str1 & 31 && *str1 == *str2)
+	{
+		str1++;
+		str2++;
+		n--;
+	}
+	if (!*str1 || !*str2 || *str2 != *str1 || n == 1)
 		return (*(unsigned char *)str1 - *(unsigned char *)str2);
 	zeros = _mm256_setzero_si256();
 	while (n > 0)

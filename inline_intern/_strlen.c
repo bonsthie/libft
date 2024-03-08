@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 21:31:10 by babonnet          #+#    #+#             */
-/*   Updated: 2024/03/06 19:33:03 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/03/08 17:38:29 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ inline size_t _strlen(const char *str)
 	__m256i			data;
 
 	orig_str = str;
+	while (*str && (uintptr_t)str & 31)
+		str++;
+	if (!*str)
+		return (str - orig_str);
 	zero = _mm256_setzero_si256();
 	while (1)
 	{
