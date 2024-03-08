@@ -48,7 +48,8 @@ SRC = ft_atoi.c \
 	ft_strtol.c \
 	inline_intern/_strlen.c\
 	inline_intern/_strcmp.c\
-	inline_intern/_strncmp.c
+	inline_intern/_strncmp.c\
+	inline_intern/_memset.c
 
 SRC_BONUS = ft_lstnew_bonus.c \
 			ft_lstsize_bonus.c \

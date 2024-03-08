@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 21:45:14 by babonnet          #+#    #+#             */
-/*   Updated: 2024/03/05 23:23:08 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/03/08 16:48:33 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,6 @@ inline int _strcmp(const char *str1, const char *str2)
 
 	if (str1 == str2)
 		return (0);
-	while (*str1 && ((uintptr_t)str1 & 31)
-		&& ((uintptr_t)str2)
-		&& *str1 == *str2)
-	{
-		str1++;
-		str2++;
-	}
 	while(1)
 	{
 		str1_256 = _mm256_loadu_si256((const __m256i *)str1);
@@ -43,6 +36,8 @@ inline int _strcmp(const char *str1, const char *str2)
 		mask = _mm256_movemask_epi8(_mm256_cmpeq_epi8(str1_256, str2_256));
 		if (mask != INT_MAX)
 			return (frv(mask, str1, str2));
+		if (_mm256_testz_si256(str1_256, str1_256))
+			return (0);
 		str1 += 32;
 		str2 += 32;
 	}
