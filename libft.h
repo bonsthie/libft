@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 12:16:35 by babonnet          #+#    #+#             */
-/*   Updated: 2024/03/12 21:42:54 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/03/12 22:12:01 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void				*ft_memmove(void *destination, const void *source,
 char				*ft_strnstr(const char *big, const char *little,
 						size_t len);
 int					ft_atoi(const char *str);
-int					ft_atof(const char *str);
+float				ft_atof(const char *str);
 char				*ft_itoa(int n);
 void				*ft_calloc(size_t nitems, size_t size);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
@@ -110,5 +110,7 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+
+int					ft_printf(const char *format, ...);
 
 #endif
