@@ -47,6 +47,7 @@ SRC = ft_atoi.c \
 	ft_isspace.c \
 	ft_atoi_base.c \
 	ft_strtol.c \
+	ft_strtod.c\
 	string/ft_printf.c \
 	string/print.c
 
