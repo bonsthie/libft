@@ -49,7 +49,8 @@ SRC = ft_atoi.c \
 	ft_strtol.c \
 	ft_strtod.c\
 	string/ft_printf.c \
-	string/print.c
+	string/print.c\
+	exit_message.c
 
 SRC_BONUS = ft_lstnew_bonus.c \
 			ft_lstsize_bonus.c \
