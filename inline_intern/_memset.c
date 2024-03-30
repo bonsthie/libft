@@ -6,15 +6,12 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 17:28:42 by babonnet          #+#    #+#             */
-/*   Updated: 2024/03/08 17:32:17 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/03/09 22:11:33 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_int.h"
 
-typedef unsigned char __attribute__((__may_alias__)) t_ptr;
-typedef uint32_t __attribute__((__may_alias__)) u32;
-typedef uint64_t __attribute__((__may_alias__)) u64;
 
 //inline memset32(*dest, int value, size_t len)
 //{

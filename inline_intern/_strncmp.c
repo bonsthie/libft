@@ -6,15 +6,13 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 22:12:56 by babonnet          #+#    #+#             */
-/*   Updated: 2024/03/08 17:40:48 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/03/09 22:09:15 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include "libft_int.h"
 #include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 
 static inline int	frv(int mask, int mask_zeros, const char *str1, const char *str2, size_t n)
 {
