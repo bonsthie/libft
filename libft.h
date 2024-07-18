@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 12:16:35 by babonnet          #+#    #+#             */
-/*   Updated: 2024/03/19 16:06:21 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:29:09 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,14 @@ along with this program.  If not, see <http://www.babonnet.org/licenses/>.
 
 # include <stdlib.h>
 # include <unistd.h>
+
+# ifndef SHORT_MIN
+#  define SHORT_MIN -32767
+# endif
+
+# ifndef SHORT_MAX
+#  define SHORT_MAX 32767
+# endif
 
 # ifndef INT_MIN
 #  define INT_MIN -2147483648
