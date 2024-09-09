@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 11:24:46 by babonnet          #+#    #+#             */
-/*   Updated: 2024/02/17 00:58:17 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/09/09 17:52:04 by bonsthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ static inline int	ft_index(char *str, char c)
 	return (tmp - str);
 }
 
-static long int	_strtol(char *nptr, char *base, int base_size)
+static long long	__strtol(char *nptr, char **end_ptr, int base_size)
 {
-	long int	nb;
+	static char	*base_s = "0123456789ABCDEF";
+	long long	nb;
 	int			i;
 	int			sign;
 
@@ -39,26 +40,23 @@ static long int	_strtol(char *nptr, char *base, int base_size)
 		sign = (int)2 * (0.5 - (*(nptr++) == '-'));
 	while (*nptr)
 	{
-		i = ft_index(base, *(nptr++));
-		if (i < 0)
-			return (0);
+		i = ft_index(base_s, *nptr);
+		if (i < 0 || i >= base_size)
+			break ;
+		nptr++;
 		nb = nb * base_size + i;
 	}
+	*end_ptr = nptr;
 	return (sign * nb);
 }
 
-long int	ft_strtol(char *nptr, char *base, int base_size)
+long long	ft_strtoll(char *nptr, char **end_ptr, int base)
 {
-	char	*base_s;
-
-	base_s = (char *)"0123456789ABCDEF";
-	if (!nptr)
+	if (!nptr || base > 16 || base < 0)
 		return (0);
-	if (!ft_strncmp(nptr, "0x", 2))
-		return (ft_strtol(nptr + 2, base_s, 16));
-	if (!ft_strncmp(nptr, "0b", 2))
-		return (ft_strtol(nptr + 2, base_s, 2));
-	if (!base || base_size == 0)
-		return (ft_strtol(nptr, base_s, 10));
-	return (_strtol(nptr, base, base_size));
+	if (!ft_strncmp(nptr, "0x", 2) && !base)
+		return (__strtol(nptr + 2, end_ptr, 16));
+	if (!ft_strncmp(nptr, "0b", 2) && !base)
+		return (__strtol(nptr + 2, end_ptr, 2));
+	return (__strtol(nptr, end_ptr, base));
 }
