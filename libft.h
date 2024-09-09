@@ -6,7 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 12:16:35 by babonnet          #+#    #+#             */
-/*   Updated: 2024/02/21 00:22:31 by babonnet         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:29:09 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,14 @@ along with this program.  If not, see <http://www.babonnet.org/licenses/>.
 
 # include <stdlib.h>
 # include <unistd.h>
+
+# ifndef SHORT_MIN
+#  define SHORT_MIN -32767
+# endif
+
+# ifndef SHORT_MAX
+#  define SHORT_MAX 32767
+# endif
 
 # ifndef INT_MIN
 #  define INT_MIN -2147483648
@@ -76,6 +84,7 @@ void				*ft_memmove(void *destination, const void *source,
 char				*ft_strnstr(const char *big, const char *little,
 						size_t len);
 int					ft_atoi(const char *str);
+float				ft_atof(const char *str);
 char				*ft_itoa(int n);
 void				*ft_calloc(size_t nitems, size_t size);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
@@ -109,5 +118,10 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+
+int					ft_printf(const char *format, ...);
+double				ft_strtod(const char *str, char **endptr);
+
+void				exit_message(int error_value, char *message);
 
 #endif
