@@ -6,11 +6,7 @@
 /*   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 11:24:46 by babonnet          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/09/09 17:52:51 by bonsthie         ###   ########.fr       */
-=======
-/*   Updated: 2024/07/18 13:48:58 by babonnet         ###   ########.fr       */
->>>>>>> refs/remotes/origin/main
+/*   Updated: 2024/09/18 16:21:41 by bonsthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +46,8 @@ static long long	__strtol(char *nptr, char **end_ptr, int base_size)
 		nptr++;
 		nb = nb * base_size + i;
 	}
-	*end_ptr = nptr;
+	if (end_ptr)
+		*end_ptr = nptr;
 	return (sign * nb);
 }
 
